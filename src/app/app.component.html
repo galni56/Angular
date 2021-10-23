@@ -1,14 +1,49 @@
-<h1>
-  my name is {{getName()}}
-</h1>
-<img [src]="imgUrl" alt="logo">
-<p>{{title}}</p>
-<p>{{userDate}}</p>
-<p>{{phoneNum}}</p>
+<mat-toolbar class="purple-bg">
+  <h1>Камень Ножницы Бумага</h1>
+</mat-toolbar>
 
-<p>
-  {{userAdresa.streetNum}}
-  {{userAdresa.houseNum}}
-</p>
-<input type="text" (keypress)="changed($event)">
-<button (click)="getAlert()" [disabled]="isButtonDisabled">Test</button>
+<div class="score">
+    <div class="score__item">
+      <h2>Игрок</h2>
+      <button mat-fab color="primary" class="score">{{ scores[0] }}</button>
+    </div>
+    <div class="score__item">
+      <h2>Skynet</h2>
+      <button mat-fab color="warn" class="score">{{ scores[1] }}</button>
+    </div>
+</div>
+
+<div class="content">
+  <mat-card class="card-item">
+    <mat-card-content>
+      <h3>Выбирай что решит,твою судьбу:</h3>
+      <div class="content2">
+        <img src="/assets/img/scissors.png" alt="scissor"
+          (click)="pick(0)"
+          [ngClass]="{ selected_weapon: playerSelected === 0 }"
+          class="weapon-img"
+        />
+        <img src="/assets/img/fist.png" alt="fist"
+          (click)="pick(1)"
+          [ngClass]="{ selected_weapon: playerSelected === 1 }"
+          class="weapon-img"
+        />
+        <img src="/assets/img/paper.png" alt="paper"
+          (click)="pick(2)"
+          [ngClass]="{ selected_weapon: playerSelected === 2 }"
+          class="weapon-img"
+        />
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="card-item">
+    <mat-card-content>
+      <div *ngIf="enemySelected !== -1" class="flex-container flex-center flex-column">
+        <p *ngIf="enemySelected === 0">У меня нет ножниц,но есть что-то похожее</p>
+        <img src="/assets/img/robo-scissors.png" *ngIf="enemySelected === 0" class="weapon-img weapon-img--robo-s"/>
+        <img src="/assets/img/robo-fist.png" alt="fist" *ngIf="enemySelected === 1" class="weapon-img weapon-img--robo-s"/>
+        <img src="/assets/img/robo-paper.png" alt="paper" *ngIf="enemySelected === 2" class="weapon-img weapon-img--robo-s"/>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

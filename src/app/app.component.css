@@ -1,0 +1,52 @@
+p {
+  font-family: Lato;
+}
+
+.purple-bg {
+  background: #9c27b0;
+  color: #ffffff;
+}
+
+.content{
+  display: flex;
+}
+
+.flex-container{
+  display:flex;
+  width:100%;
+}
+
+.card-item {
+  width: 100%;
+}
+.score {
+  font-size:1.5em;
+  display: flex;
+  justify-content: space-around;
+  margin: 0.7em 0;
+}
+
+.score__item {
+  text-align: center;
+}
+
+.flex-center{
+  align-items: center;
+  justify-content: center;
+}
+
+.selected_weapon{
+  color: background;
+}
+
+.weapon-img {
+  max-width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+.weapon-img--robo-s {
+  max-width: 250px;
+}
+.flex-column {
+  flex-direction: column;
+}

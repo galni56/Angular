@@ -3,33 +3,65 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: [ './app.component.css' ]
 })
-export class AppComponent {
-  title = 'test';
-  userDate = '12/04/1901';
-  phoneNum = '+405650545';
+export class AppComponent  {
+  scores = [0 , 0];
 
-  userAdresa = {
-    streetNum:'Pushkina',
-    houseNum :'Kolotushkina'
+  weapons = [
+    'rock',
+    'paper',
+    'scissors'
+  ]
+  playerSelected = -1;
+  loading= false;
+  isResultShow = false;
+
+  //результат возраващает 0-2. 0 - победа,1 - проигрыш,2 - ничья
+  theResult = 0
+  enemySelected  = -1;
+
+  pick( weapon: number): void {
+    this.loading = true;
+    this.playerSelected = weapon;
+
+    // генерирация исхода сражения
+    const randomNum =  Math.floor(Math.random() * 3 ) ;
+    this.enemySelected = randomNum;
+    this.checkResult();
+    this.isResultShow = true;
   }
 
-  getName = () => {
-    return this.userDate;
+  reset(): void {
+    this.scores = [0,0];
   }
-   getAlert() {
-    alert('test')
-   }
-  isButtonDisabled = true
-  imgUrl = "https://www.google.com.ua/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
-
-  changed(value: any) {
-    console.log(value);
-    console.log('changed', value.target.value)
-    this.title = value.target.value;
+  checkResult(): void {
+    const playerPick = this.playerSelected;
+    const enemyPick = this.enemySelected;
+    //  ничья - если одинаковое оружие.
+    if( playerPick ==  enemyPick)
+    {
+      this.theResult = 2;
+    }
+      /*деление с остатком.
+      * если игрок выбрал камень - 0, враг бумагу - 1.
+      * игрок проиграет потому что 0-1+3 % 3 = 2
+      *
+      * если игрок выбрал камень - 0, враг ножницы - 2.
+      * игрок выиграет  потому что 0-2+3 % 3 = 1
+      *
+      * если игрок выбрал ножницы - 2, враг бумагу - 1.
+      * игрок выиграет потому что 3-1+3 % 3 = 1
+      * */
+    else if ( (playerPick - enemyPick + 3)% 3 == 1)    {
+      // победа
+      this.theResult = 0;
+      this.scores[0] = this.scores[0]+1;
+    }
+    else{
+      // проигрыш
+      this.theResult = 1;
+      this.scores[1] = this.scores[1]+1;
+    }
   }
-
-
-
 }

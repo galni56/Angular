@@ -40,7 +40,7 @@
     <mat-card-content>
       <div *ngIf="enemySelected !== -1" class="flex-container flex-center flex-column">
         <p *ngIf="enemySelected === 0">У меня нет ножниц,но есть что-то похожее</p>
-        <img src="/assets/img/robo-scissors.png" *ngIf="enemySelected === 0" class="weapon-img weapon-img--robo-s"/>
+        <img src="/assets/img/robo-scissors.png" alt="scissors" *ngIf="enemySelected === 0" class="weapon-img weapon-img--robo-s"/>
         <img src="/assets/img/robo-fist.png" alt="fist" *ngIf="enemySelected === 1" class="weapon-img weapon-img--robo-s"/>
         <img src="/assets/img/robo-paper.png" alt="paper" *ngIf="enemySelected === 2" class="weapon-img weapon-img--robo-s"/>
       </div>

@@ -48,7 +48,14 @@ p {
   max-width: 150px;
   height: auto;
   cursor: pointer;
+  transition: 0.3s;
 }
+
+.weapon-img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
 .weapon-img--robo-s {
   max-width: 250px;
 }

@@ -14,7 +14,6 @@ export class AppComponent  {
     'scissors'
   ]
   playerSelected = -1;
-  loading= false;
   isResultShow = false;
 
   //результат возраващает 0-2. 0 - победа,1 - проигрыш,2 - ничья
@@ -22,7 +21,6 @@ export class AppComponent  {
   enemySelected  = -1;
 
   pick( weapon: number): void {
-    this.loading = true;
     this.playerSelected = weapon;
 
     // генерирация исхода сражения

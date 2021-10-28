@@ -1,0 +1,64 @@
+<mat-toolbar class="purple-bg">
+  <h2>Камень Ножницы Бумага</h2>
+</mat-toolbar>
+
+<div class="score">
+  <div class="score__item">
+    <h2>Игрок</h2>
+    <button mat-fab color="primary" class="score">{{ scores[0] }}</button>
+  </div>
+  <div class="score__item">
+    <h2>Skynet</h2>
+    <button mat-fab color="warn" class="score">{{ scores[1] }}</button>
+  </div>
+</div>
+
+<div class="content">
+  <mat-card class="card-item">
+    <mat-card-content>
+      <h3>Выбирай что решит,твою судьбу:</h3>
+      <div class="content-img">
+        <img src="/assets/img/scissors.png" alt="scissor"
+             (click)="pick(0)"
+             [ngClass]="{ selected_weapon: playerSelected === 0 }"
+             class="weapon-img"
+        />
+        <img src="/assets/img/fist.png" alt="fist"
+             (click)="pick(1)"
+             [ngClass]="{ selected_weapon: playerSelected === 1 }"
+             class="weapon-img"
+        />
+        <img src="/assets/img/paper.png" alt="paper"
+             (click)="pick(2)"
+             [ngClass]="{ selected_weapon: playerSelected === 2 }"
+             class="weapon-img"
+        />
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="card-item">
+    <mat-card-content>
+      <div *ngIf="enemySelected !== -1" class="flex-container flex-center flex-column">
+        <h4 *ngIf="enemySelected === 0">У меня нет ножниц,но есть что-то похожее</h4>
+        <img src="/assets/img/robo-scissors.png" alt="scissors" *ngIf="enemySelected === 0" class="weapon-img weapon-img--robo-s"/>
+        <img src="/assets/img/robo-fist.png" alt="fist" *ngIf="enemySelected === 1" class="weapon-img weapon-img--robo-s"/>
+        <img src="/assets/img/robo-paper.png" alt="paper" *ngIf="enemySelected === 2" class="weapon-img weapon-img--robo-s"/>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="!loading && isResultShow" class="flex-container flex-center" style="flex-direction: column">
+  <div [ngSwitch]="theResult">
+    <ng-template [ngSwitchCase]= "0"> <h1> Ты Победил! </h1></ng-template>
+    <ng-template [ngSwitchCase]= "1"> <h1> Ты Проиграл. </h1> </ng-template>
+    <ng-template [ngSwitchCase]= "2"> <h1> Ничья! </h1> </ng-template>
+    <ng-template ngSwitchDefault> </ng-template>
+  </div>
+  <h3>Играй дальше или обнули счёт</h3>
+  <button  (click)="reset()" mat-raised-button  color="primary">Обнулить</button>
+</div>
+
+<div class="flex-container flex-center" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>

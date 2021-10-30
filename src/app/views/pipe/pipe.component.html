@@ -1,14 +1,21 @@
-<h1 [class.mat-card-title]>
-  {{ nameStr.value | reverseStr : reversValue.value}}
-</h1>
-<mat-card>
-  <label>
-    Revers num
-    <input #reversValue (keyup)="0" value="1">
+<mat-toolbar color="primary">
+  <h2>Реверс строки и "Позитивный" input</h2>
+</mat-toolbar>
+
+<div class="pipe">
+  <h1 [class.mat-card-title]>
+    {{ nameStr.value | reverseStr : reversValue.value}}
+  </h1>
+  <label class="input-box">
+    Revers num:
+    <input #reversValue (keyup)="0" value="0">
   </label>
-  <label>
-    Str
-    <input #nameStr (keyup)="0" value="Test">
+  <label class="input-box">
+    Str:
+    <input #nameStr (keyup)="0" value="Terminado">
   </label>
-  <input PositiveNumOnly type="text" placeholder="Number only input" >
-</mat-card>
+  <label class="input-box">
+    Only positive input
+    <input PositiveNumOnly type="text" placeholder="Number only input" >
+  </label>
+</div>

@@ -18,6 +18,7 @@ import { GameComponent } from './views/game/game.component';
 import { NavMenuComponent } from './shared/nav-menu/nav-menu.component';
 import { NavMenuItemComponent } from './shared/nav-menu/nav-menu-item/nav-menu-item.component';
 import { ListComponent } from './shared/list/list.component';
+import { ReverseStrPipe } from './views/pipe/reverse-str.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ListComponent } from './shared/list/list.component';
     GameComponent,
     NavMenuComponent,
     NavMenuItemComponent,
-    ListComponent
+    ListComponent,
+    ReverseStrPipe
   ],
   imports: [
     BrowserModule,

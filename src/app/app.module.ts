@@ -19,6 +19,7 @@ import { NavMenuComponent } from './shared/nav-menu/nav-menu.component';
 import { NavMenuItemComponent } from './shared/nav-menu/nav-menu-item/nav-menu-item.component';
 import { ListComponent } from './shared/list/list.component';
 import { ReverseStrPipe } from './views/pipe/reverse-str.pipe';
+import { PositiveNumOnly } from './positive-num-only.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReverseStrPipe } from './views/pipe/reverse-str.pipe';
     NavMenuComponent,
     NavMenuItemComponent,
     ListComponent,
-    ReverseStrPipe
+    ReverseStrPipe,
+    PositiveNumOnly
   ],
   imports: [
     BrowserModule,

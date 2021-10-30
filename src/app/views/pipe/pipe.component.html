@@ -1,6 +1,14 @@
-<h1>
-  {{ name | reverseStr : 4}}
+<h1 [class.mat-card-title]>
+  {{ nameStr.value | reverseStr : reversValue.value}}
 </h1>
 <mat-card>
-
+  <label>
+    Revers num
+    <input #reversValue (keyup)="0" value="1">
+  </label>
+  <label>
+    Str
+    <input #nameStr (keyup)="0" value="Test">
+  </label>
+  <input PositiveNumOnly type="text" placeholder="Number only input" >
 </mat-card>

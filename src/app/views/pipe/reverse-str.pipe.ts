@@ -6,8 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ReverseStrPipe implements PipeTransform {
 
   transform(value: any, ...args: any[]): any {
-    console.log(value);
-    return value.slice(0,args);
+    let strValue = value.substring(0, args)
+    let reverseValue = strValue.split('').reverse().join('');
+
+    return value ? value.slice(args) + reverseValue : '';
   }
 
 }

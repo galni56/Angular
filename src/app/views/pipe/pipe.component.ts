@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipeComponent implements OnInit {
   name = "Angular";
+  positiveNum = null;
   constructor() { }
 
   ngOnInit(): void {

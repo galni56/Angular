@@ -8,11 +8,11 @@
   </h1>
   <label class="input-box">
     Revers num:
-    <input #reversValue (keyup)="0" value="0">
+    <input PositiveNumOnly #reversValue (keyup)="0" value="" placeholder="Number only input">
   </label>
   <label class="input-box">
     Str:
-    <input #nameStr (keyup)="0" value="Terminado">
+    <input #nameStr (keyup)="0" value="Terminado" placeholder="Terminado">
   </label>
   <label class="input-box">
     Only positive input

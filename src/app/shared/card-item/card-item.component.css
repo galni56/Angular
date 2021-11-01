@@ -1,0 +1,11 @@
+
+.item-card {
+  max-width: 300px;
+  margin-right: 10px;
+}
+
+.example-header-image {
+  background-image: url('https://img.yumpu.com/62152606/1/500x640/angular.jpg');
+  background-size: cover;
+}
+

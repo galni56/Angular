@@ -1,0 +1,16 @@
+.stylized {
+  background: #222;
+}
+.stylized h2 {
+  background-image: linear-gradient(43deg, #bb0303 0%, #dc981b 46%, #ff0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.library-wrapper app-card-item {
+  display:flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}

@@ -20,6 +20,8 @@ import { MatToolbarModule }  from '@angular/material/toolbar';
 import { MatButtonModule }  from '@angular/material/button';
 import { MatProgressSpinnerModule }  from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
+import { LibraryComponent } from './views/library/library.component';
+import { CardItemComponent } from './shared/card-item/card-item.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MatInputModule } from '@angular/material/input';
     NavMenuItemComponent,
     ListComponent,
     ReverseStrPipe,
-    PositiveNumOnly
+    PositiveNumOnly,
+    LibraryComponent,
+    CardItemComponent
   ],
   imports: [
     BrowserModule,

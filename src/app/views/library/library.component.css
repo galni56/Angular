@@ -14,3 +14,23 @@
   flex-wrap: wrap;
   margin: 20px 0;
 }
+
+.settings {
+  padding: 20px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  margin: 0 0 15px 0;
+}
+
+.input-box input {
+  padding: 10px;
+  font-size: 18px;
+  outline: none;
+  background: none;
+  border:none;
+  border-bottom: 2px solid rgba(0,0,0,0.5);
+}

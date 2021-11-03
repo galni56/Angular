@@ -1,0 +1,30 @@
+<div class="settings">
+  <mat-card-title *ngIf="isAdd">Добавить книгу:</mat-card-title>
+  <mat-card-title *ngIf="isUpdate">Редактировать книгу:</mat-card-title>
+  <div class="book-form__fields">
+    <label class="input-box" for="title">Название:
+      <input type="text" id="title"
+             [(ngModel)]="book.title" placeholder="">
+    </label>
+    <label class="input-box" for="author">Подзаголовок:
+      <input type="text" id="author"
+             [(ngModel)]="book.subtitle" placeholder="">
+    </label>
+    <label class="input-box" for="pages">Ссылка на картинку:
+      <input type="text" id="pages"
+             [(ngModel)]="book.about" placeholder="">
+    </label>
+    <label class="input-box" for="year">Ссылка на картинку:
+      <input type="text" id="year"
+             [(ngModel)]="book.link" placeholder="">
+    </label>
+  </div>
+  <mat-card-actions>
+    <button mat-raised-button  color="primary" *ngIf="isAdd" (click)="addBook()">
+      Добавить
+    </button>
+    <button mat-raised-button  color="primary" *ngIf="isUpdate" (click)="updateBook()">
+     Изменить
+    </button>
+  </mat-card-actions>
+</div>

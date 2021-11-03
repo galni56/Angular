@@ -2,35 +2,35 @@
   background: #222;
 }
 .stylized h2 {
-  background-image: linear-gradient(43deg, #bb0303 0%, #dc981b 46%, #ff0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ color: #eae9e9;
 }
 
-.library-wrapper app-card-item {
+.library {
+  display: flex;
+  justify-content: space-between;
+}
+
+.library aside,
+.library div {
+  margin: 20px 0;
+}
+
+.library-wrapper {
   display:flex;
   justify-content: start;
   align-items: start;
   flex-wrap: wrap;
-  margin: 20px 0;
 }
 
-.settings {
-  padding: 20px;
+@media all and (max-width: 768px) {
+  .library {
+    flex-direction: column;
+  }
+  .library aside {
+    order: 1;
+  }
+  .library div {
+    order: 2;
+  }
 }
 
-.input-box {
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-  margin: 0 0 15px 0;
-}
-
-.input-box input {
-  padding: 10px;
-  font-size: 18px;
-  outline: none;
-  background: none;
-  border:none;
-  border-bottom: 2px solid rgba(0,0,0,0.5);
-}

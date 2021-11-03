@@ -4,8 +4,8 @@
   margin-right: 10px;
 }
 
-.example-header-image {
-  background-image: url('https://img.yumpu.com/62152606/1/500x640/angular.jpg');
-  background-size: cover;
+.item-card .about {
+  min-height: 100px;
 }
+
 

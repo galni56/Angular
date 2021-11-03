@@ -22,6 +22,8 @@ import { MatProgressSpinnerModule }  from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { LibraryComponent } from './views/library/library.component';
 import { CardItemComponent } from './shared/card-item/card-item.component';
+import { BookFormComponent } from './views/library/book-form/book-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { CardItemComponent } from './shared/card-item/card-item.component';
     ReverseStrPipe,
     PositiveNumOnly,
     LibraryComponent,
-    CardItemComponent
+    CardItemComponent,
+    BookFormComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { CardItemComponent } from './shared/card-item/card-item.component';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

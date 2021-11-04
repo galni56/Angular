@@ -10,13 +10,14 @@
       <input type="text" id="author"
              [(ngModel)]="book.subtitle" placeholder="">
     </label>
-    <label class="input-box" for="pages">Ссылка на картинку:
-      <input type="text" id="pages"
-             [(ngModel)]="book.about" placeholder="">
-    </label>
     <label class="input-box" for="year">Ссылка на картинку:
       <input type="text" id="year"
              [(ngModel)]="book.link" placeholder="">
+    </label>
+    <label class="input-box" for="pages">Описание:
+      <textarea type="text" id="pages"
+             [(ngModel)]="book.about" placeholder="">
+      </textarea>
     </label>
   </div>
   <mat-card-actions>

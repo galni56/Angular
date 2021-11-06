@@ -24,6 +24,7 @@ import { LibraryComponent } from './views/library/library.component';
 import { CardItemComponent } from './shared/card-item/card-item.component';
 import { BookFormComponent } from './views/library/book-form/book-form.component';
 import { FormsModule } from '@angular/forms';
+import { UserFormsComponent } from './views/user-forms/user-forms.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     PositiveNumOnly,
     LibraryComponent,
     CardItemComponent,
-    BookFormComponent
+    BookFormComponent,
+    UserFormsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,32 @@
 Для большого проекта - Reactive forms.
 Это новый подход для работы с формами в реактивном стиле. Описание формы происходит в компоненте в виде дерева объектов, после чего это дерево связывается с шаблоном. Все манипуляции (проверка валидности, подписка на изменение значения и прочее) производятся в компоненте, что делает работу более гибкой, удобной и предсказуемой.
 
+Описать хуки жизненного цикла компонентов: OnInit, OnChanges, AfterViewInit?
+ngOnInit: вызывается один раз после установки свойств компонента, которые участвуют в привязке. Выполняет инициализацию компонента.
+ngOnChanges: вызывается до метода ngOnInit() при начальной установке свойств, которые связаны механизмом привязки, а также при любой их переустановке или изменении их значений. Данный метод в качестве параметра принимает объект класса SimpleChanges, который содержит предыдущие и текущие значения свойства.
+ngAfterViewInit: вызывается фреймворком Angular после инициализации представления компонента, а также представлений дочерних компонентов. Вызывается только один раз сразу после 
+первого вызова метода ngAfterContentChecked()
+
+Опишите встроенную проверку в Angular?
+built-in validation - это встроенные валидаторы для валидации форм в ангуляр. Валидатор: min, max, minLength, maxLength, required, requiredTrue, pattern, email, nullValidator, compose, composeAsync.
+
+Что такое formControl?
+
+При исспользовании Reactive Forms подхода к соозданию форм создается набор объектов FormGroup и FormControl.
+Группа представляет собой объект FormGroup, а поле — объект FormControl.
+export class FormGroupDemoComponent { 
+  usrNameChanges: string;
+  usrNameStatus: string;
+  userForm = new FormGroup({
+	name: new FormControl('Mahesh', Validators.maxLength(10)),
+	age: new FormControl(20, Validators.required),
+	city: new FormControl(),
+	country: new FormControl()
+  });
+  get userName(): any {
+        return this.userForm.get('name');
+  }
+}
 
 Ответы на вопросы к 4у уроку. --//--
 

@@ -1,0 +1,52 @@
+
+<div class="forms-container__column">
+  <h2>Template-driven</h2>
+  <form #userForm="ngForm" (ngSubmit)="onSubmitForm($event)">
+    <label class="input-box">Имя:
+      <input [ngClass]="name.invalid && !name.pristine ? 'error' : ''"
+             type="text" [(ngModel)]="user.name" name="name"
+             #name="ngModel" required pattern="[a-zA-Zа-яА-Я]*"/>
+    </label>
+    <label class="input-box">Username:
+      <input [ngClass]="username.invalid && !username.pristine ? 'error' : ''"
+             type="text" [(ngModel)]="user.username" name="username"
+             #username="ngModel" required minlength="2" maxlength="99"/>
+    </label>
+    <label class="input-box">Возраст:
+      <input [(ngModel)]="user.age" name="age" type="number" #age="ngModel" min="18" max="99"/>
+    </label>
+    <label class="input-box">Email:
+      <input [ngClass]="email.invalid && !email.pristine ? 'error' : ''"
+             type="text" [(ngModel)]="user.email" name="email" placeholder="mail@mail.com"
+             #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  />
+    </label>
+    <label class="input-box">Телефон:
+      <input [ngClass]="phone.invalid && !phone.pristine ? 'error' : ''"
+             type="text" [(ngModel)]="user.phone" name="phone" placeholder="+38xxxxxxxxx"
+             #phone="ngModel" required pattern="^\+38\d{3}\d{7}$"/>
+    </label>
+    <div class="form-buttons">
+      <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Send</button>
+      <button mat-button color="primary" (click)="onResetForm(userForm)">Reset</button>
+    </div>
+  </form>
+</div>
+<div class="form-container__data" *ngIf="isFormSubmitted">
+  <ul>
+    <li>
+      Имя: <b>{{ user.name }}</b>
+    </li>
+    <li>
+      Username: <b>{{ user.username }}</b>
+    </li>
+    <li>
+      Email: <b>{{ user.email }}</b>
+    </li>
+    <li>
+      Телефон: <b>{{ user.phone }}</b>
+    </li>
+    <li>
+      Возраст: <b>{{ user.age }}</b>
+    </li>
+  </ul>
+</div>

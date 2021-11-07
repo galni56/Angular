@@ -18,7 +18,9 @@ export class NavMenuComponent implements OnInit {
     this.menuItems = [
       { link: '/game', title: 'Game' },
       { link: '/pipe', title: 'Pipe' },
-      { link: '/library', title: 'Library' }
+      { link: '/library', title: 'Library' },
+      { link: '/user-forms', title: 'Forms' },
+      { link: '/weather', title: 'Weather' }
     ]
   }
 

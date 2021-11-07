@@ -1,1 +1,57 @@
-<p>user-forms works!</p>
+<mat-toolbar color="primary">
+  <h2>Формы</h2>
+</mat-toolbar>
+
+<section class="forms">
+  <div class="forms-container">
+    <div class="forms-container__column">
+      <h2>Reactive form</h2>
+      <form [formGroup]="formReactive" (ngSubmit)="onFormSubmit($event)">
+        <label class="input-box">Имя:
+          <input [ngClass]="getValidationClass('name')" type="text" formControlName="name"/>
+        </label>
+        <label class="input-box">Username:
+          <input [ngClass]="getValidationClass('username')" type="text" formControlName="username"/>
+        </label>
+        <label class="input-box">Возраст:
+          <input [ngClass]="getValidationClass('age')" type="number" formControlName="age"
+                 min="18" max="99"/>
+        </label>
+        <label class="input-box">Email:
+          <input [ngClass]="getValidationClass('email')" placeholder="mail@mail.com"
+                 type="text" formControlName="email"/>
+        </label>
+        <label class="input-box">Телефон:
+          <input [ngClass]="getValidationClass('phone')" placeholder="+38xxxxxxxxx"
+                 type="text" formControlName="phone"/>
+        </label>
+        <div class="form-buttons">
+          <button mat-raised-button color="primary" type="submit" [disabled]="formReactive.invalid">Send</button>
+          <button mat-button color="primary" (click)="resetForm()">Reset</button>
+        </div>
+      </form>
+    </div>
+    <div class="form-container__data" *ngIf="isFormSubmitted">
+      <ul>
+        <li>
+          Имя: <b>{{ user.name }}</b>
+        </li>
+        <li>
+          Username: <b>{{ user.username }}</b>
+        </li>
+        <li>
+          Email: <b>{{ user.email }}</b>
+        </li>
+        <li>
+          Телефон: <b>{{ user.phone }}</b>
+        </li>
+        <li>
+          Возраст: <b>{{ user.age }}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="forms-container not-styled">
+    <app-template-driven></app-template-driven>
+  </div>
+</section>
